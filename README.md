@@ -1,44 +1,43 @@
-# <img src="https://github.com/theletron/bloxflags/raw/main/Bloxflags.png" width="48"/> Bloxflags
+<div align="center">
+    <img src="Images/Bloxflags-full-dark.png#gh-dark-mode-only" width="420">
+    <img src="Images/Bloxflags-full-light.png#gh-light-mode-only" width="420">
+</div>
 
-![Currently listed presets](https://img.shields.io/badge/currently_listed_presets-50-yellow)
-![Version](https://img.shields.io/badge/version-2.0.0-7238e6)
+<div align="center">
+
+[shield-repository-license]:  https://img.shields.io/github/license/theletron/bloxflags
+[shield-repository-latest]:   https://img.shields.io/github/v/release/theletron/bloxflags?color=7439DB
+[shield-preset-count]:        https://img.shields.io/badge/currently_listed_presets-51-yellow
+
+[repository-license]:         https://github.com/theletron/bloxflags/blob/main/LICENSE
+[repository-latest]:          https://github.com/theletron/bloxflags/releases/latest
+
+[img-logo-bloxstrap]:         https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png
+[img-logo-appleblox]:         https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png
+
+[![License][shield-repository-license]][repository-license]
+[![Currently Listed Presets][shield-preset-count]][repository-license]
+[![Version][shield-repository-latest]][repository-latest]
+
+</div>
+
+----
 
 Collection of [FastFlags](https://github.com/pizzaboxer/bloxstrap/wiki/A-guide-to-FastFlags) in the Roblox engine.
 Most of the FastFlags come from the [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R). <br>
 
 ## Requirements
-* <img src="https://github.com/bloxstraplabs/bloxstrap/blob/main/Images/Bloxstrap.png" width="20"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
-* <img src="https://github.com/AppleBlox/appleblox/blob/main/.github/assets/logo.png" width="24"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
+* <img align="center" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
+* <img align="center" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
 
 ## Preset Type Navigation
-* **[Rendering](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#rendering)**
 * **[Lighting](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file##lighting)**
 * **[Graphical](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#graphical)**
-* **[QoL](https://github.com/theletron/bloxflagst/tree/main?tab=readme-ov-file#qol)**
+* **[Improvements](https://github.com/theletron/bloxflagst/tree/main?tab=readme-ov-file#qol)**
 * **[UI](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#user-interface)**
 * **[Audio](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#audio)**
 * **[Debugging](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#debugging)**
 * **[Experimental](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#experimental)**
-
-<h1 align="center">Rendering</h1>
-
-### OpenGL
-```json
-{
-    "FFlagDebugGraphicsDisableDirect3D11": true,
-    "FFlagDebugGraphicsPreferOpenGL": true
-}
-```
-
-### Vulkan
-> [!WARNING]
-> May cause bugs, issues and instability.
-```json
-{
-    "FFlagDebugGraphicsDisableDirect3D11": true,
-    "FFlagDebugGraphicsPreferVulkan": true
-}
-```
 
 <h1 align="center">Lighting</h1>
 
@@ -253,8 +252,10 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 }
 ```
 
-### Timeout Time
-##### Default: 10000
+### Time Until Timeout
+> [!TIP]
+> Increasing this option will give you more time to reconnect in case of network loss.
+> This flag has the default value.
 ```json
 {
     "DFIntDefaultTimeoutTimeMs": 10000
@@ -276,7 +277,26 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 }
 ```
 
+### Dev Console Log Limit
+> [!TIP]
+> Increasing this option will make your life better, if you are a developer.
+> This flag has the default value.
+###### [@satlybpro](https://discord.com/channels/1099468797410283540/1300747833086971904)
+```json
+{
+    "FIntNewDevConsoleMaxLogCount": 500
+}
+```
+
 <h1 align="center">User Interface</h1>
+
+### Remove Platform Chat
+###### [@]()
+```json
+{
+    "FFlagAppChatInExperienceEnabledV647new": false
+}
+```
 
 ### Rename "Charts" back to "Discovery"
 ###### [@cam1494](https://discord.com/channels/1099468797410283540/1254997424116863048)
@@ -407,7 +427,7 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 ### Voice Chat Hear Distance
 ###### Default: Min 7, Max 80
 > [!TIP]
-> These are flags have default values.
+> These flags have default values.
 ```json
 {
     "DFIntVoiceChatRollOffMinDistance": 7,
@@ -490,5 +510,28 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 ```json
 {
     "FFlagOverridePlayerVerifiedBadge": true
+}
+```
+
+<h2 align="center">Rendering</h1>
+
+> [!WARNING]
+> You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap.
+> These renderers are unstable and can cause bugs, crashes and instability.
+> Only change your renderer if you know what you are doing.
+
+### OpenGL
+```json
+{
+    "FFlagDebugGraphicsDisableDirect3D11": true,
+    "FFlagDebugGraphicsPreferOpenGL": true
+}
+```
+
+### Vulkan
+```json
+{
+    "FFlagDebugGraphicsDisableDirect3D11": true,
+    "FFlagDebugGraphicsPreferVulkan": true
 }
 ```
