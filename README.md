@@ -23,8 +23,8 @@
 
 ----
 
-Collection of [FastFlags](https://github.com/pizzaboxer/bloxstrap/wiki/A-guide-to-FastFlags) in the Roblox engine.
-Most of the FastFlags come from the [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R). <br>
+Collection of [fast flags](https://github.com/pizzaboxer/bloxstrap/wiki/A-guide-to-FastFlags) that are grouped as presets in the Roblox engine.
+Most of the fast flags come from the [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R).
 
 ## Requirements
 * <img align="center" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
@@ -33,7 +33,8 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 ## Preset Type Navigation
 * **[Lighting](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file##lighting)**
 * **[Graphical](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#graphical)**
-* **[Improvements](https://github.com/theletron/bloxflagst/tree/main?tab=readme-ov-file#qol)**
+* **[Improvements](https://github.com/theletron/bloxflagst/tree/main?tab=readme-ov-file#improvements)**
+* **[Escape Menu Version](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#escape-menu-version)**
 * **[UI](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#user-interface)**
 * **[Audio](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#audio)**
 * **[Debugging](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#debugging)**
@@ -58,28 +59,6 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 ```
 
 <h1 align="center">Graphical</h1>
-
-### Occlusion Culling
-> [!TIP]
-> Only renders instances that is visible to the player. Improves FPS significantly on lower-end devices.
-###### [@Maximum_ADHD](https://x.com/MaximumADHD/status/1832254232243617871)
-```json
-{
-    "DFFlagUseVisBugChecks": true,
-    "FFlagEnableVisBugChecks27": true,
-    "FIntEnableVisBugChecksHundredthPercent27": 100
-}
-```
-
-### Terrain Quality Manager
-> [!TIP]
-> The higher the number, the better the quality. 8, 16, 32 and 64 can be used
-###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1194889014981967932)
-```json
-{
-    "FIntTerrainArraySliceSize": 8
-}
-```
 
 ### No Textures
 ###### [@.s_y_](https://discord.com/channels/1099468797410283540/1247944649822441634)
@@ -124,7 +103,7 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 
 ### Grass Motion Speed
 > [!TIP]
-> The speed of the grass increases with the number.
+> The speed of the grass increases with the value.
 ###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1292228979008339999)
 ```json
 {
@@ -142,7 +121,7 @@ Most of the FastFlags come from the [Bloxstrap discord server](https://discord.g
 }
 ```
 
-<h1 align="center">QoL</h1>
+<h1 align="center">Improvements</h1>
 
 ### Disable 240 FPS cap
 ```json
