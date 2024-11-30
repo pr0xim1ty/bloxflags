@@ -16,7 +16,7 @@
 [img-logo-appleblox]:         https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png
 
 [![License][shield-repository-license]][repository-license]
-[![Currently Listed Presets][shield-preset-count]][]
+![Currently Listed Presets][shield-preset-count]
 [![Version][shield-repository-latest]][repository-latest]
 
 </div>
