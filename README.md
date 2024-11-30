@@ -24,21 +24,21 @@
 ----
 
 Collection of [fast flags](https://github.com/pizzaboxer/bloxstrap/wiki/A-guide-to-FastFlags) that are grouped as presets in the Roblox engine.
-Most of the fast flags come from the [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R).
+Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 
 ## Requirements
-* <img align="center" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
-* <img align="center" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
+* <img align="center" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24" style="vertical-align: middle;"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
+* <img align="center" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24" style="vertical-align: middle;"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
 
 ## Preset Type Navigation
-* **[Lighting](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file##lighting)**
-* **[Graphical](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#graphical)**
-* **[Improvements](https://github.com/theletron/bloxflagst/tree/main?tab=readme-ov-file#improvements)**
-* **[Escape Menu Version](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#escape-menu-version)**
-* **[UI](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#user-interface)**
-* **[Audio](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#audio)**
-* **[Debugging](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#debugging)**
-* **[Experimental](https://github.com/theletron/bloxflags/tree/main?tab=readme-ov-file#experimental)**
+* **[Lighting](https://github.com/theletron/bloxflags/tree/main#lighting)**
+* **[Graphical](https://github.com/theletron/bloxflags/tree/main#graphical)**
+* **[Improvements](https://github.com/theletron/bloxflags/tree/main#improvements)**
+* **[Escape Menu Version](https://github.com/theletron/bloxflags/tree/main#escape-menu-version)**
+* **[UI](https://github.com/theletron/bloxflags/tree/main#user-interface)**
+* **[Audio](https://github.com/theletron/bloxflags/tree/main#audio)**
+* **[Debugging](https://github.com/theletron/bloxflags/tree/main#debugging)**
+* **[Experimental](https://github.com/theletron/bloxflags/tree/main#experimental)**
 
 <h1 align="center">Lighting</h1>
 
@@ -130,12 +130,12 @@ Most of the fast flags come from the [Bloxstrap discord server](https://discord.
 }
 ```
 
-### Enable Captures Toggle for V4 + New UI
+### Enable Captures Toggle for Chrome UI
 > [!IMPORTANT]
 > This will **not** remove Captures and return the Record tab.
 > It will add a toggle to turn on and off the Capture button.
 > Only V4 + New UI doesn't have this toggle (V2 doesn't have the Captures tab)
-###### @theletron
+###### [@theletron](https://github.com/theletron)
 ```json
 {
     "FFlagEnableCapturesInChrome": false
@@ -311,7 +311,7 @@ Most of the fast flags come from the [Bloxstrap discord server](https://discord.
 ```
 
 ### Revert Unibar Icon Change
-###### @theletron
+###### [@theletron](https://github.com/theletron)
 ```json
 {
     "FFlagUseNewUnibarIcon": false
@@ -319,7 +319,7 @@ Most of the fast flags come from the [Bloxstrap discord server](https://discord.
 ```
 
 ### Remove Unibar Respawn Button
-###### @theletron
+###### [@theletron](https://github.com/theletron)
 ```json
 {
     "FFlagUnibarRespawn": false
@@ -378,7 +378,7 @@ Most of the fast flags come from the [Bloxstrap discord server](https://discord.
 ```
 
 ### Remove Experience Language Option
-###### @theletron
+###### [@theletron](https://github.com/theletron)
 ```json
 {
     "FIntV1MenuLanguageSelectionFeaturePerMillageRollout": 0
