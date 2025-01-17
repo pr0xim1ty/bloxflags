@@ -1,10 +1,3 @@
-<div align="center">
-    <img src="Images/Bloxflags-full-dark.png#gh-dark-mode-only" width="420">
-    <img src="Images/Bloxflags-full-light.png#gh-light-mode-only" width="420">
-</div>
-
-<div align="center">
-
 [shield-repository-license]:  https://img.shields.io/github/license/theletron/bloxflags
 [shield-repository-latest]:   https://img.shields.io/github/v/release/theletron/bloxflags?color=7439DB
 [shield-preset-count]:        https://img.shields.io/badge/currently_listed_presets-51-yellow
@@ -12,8 +5,19 @@
 [repository-license]:         https://github.com/theletron/bloxflags/blob/main/LICENSE
 [repository-latest]:          https://github.com/theletron/bloxflags/releases/latest
 
-[img-logo-bloxstrap]:         https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png
-[img-logo-appleblox]:         https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png
+> [!CAUTION]
+> FastFlags are extremely powerful, being that they are intended to only be used by Roblox engineers. While they can be very useful, they can cause issues with stability and functionality if you don't know what you're doing. <br> <br> You should only use the flag list editor if you know what you're doing. You should only configure flags that you know exactly what they do. <br> <br> We especially do not recommend importing any flags that claim to "optimise ping", "+250 fps boost" and more. These are clickbait and don't work.
+
+> [!IMPORTANT]
+> In the near future, Roblox plans to restrict local flag configurations. This was supposed to have already been implemented, but it hasn't been.
+> **This doesn't mean you shouldn't use this flag list at this time.**
+
+<div style="text-align: center;">
+    <img alt="Bloxflags logo" src="Images/Branding/Bloxflags-full-dark.png#gh-dark-mode-only" width="420">
+    <img alt="Bloxflags logo" src="Images/Branding/Bloxflags-full-light.png#gh-light-mode-only" width="420">
+</div>
+
+<div style="text-align: center;">
 
 [![License][shield-repository-license]][repository-license]
 ![Currently Listed Presets][shield-preset-count]
@@ -23,28 +27,29 @@
 
 ----
 
-Collection of [fast flags](https://github.com/pizzaboxer/bloxstrap/wiki/A-guide-to-FastFlags) that are grouped as presets in the Roblox engine.
-Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
+This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki/What-are-fast-flags%3F) grouped as presets for use with the Roblox engine.
 
 ## Requirements
-* <img align="center" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24" style="vertical-align: middle;"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
-* <img align="center" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24" style="vertical-align: middle;"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
+
+* <img alt="Bloxstrap" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24" style="vertical-align: middle;"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
+* <img alt="AppleBlox" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24" style="vertical-align: middle;"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
 
 ## Preset Type Navigation
+
 * **[Lighting](https://github.com/theletron/bloxflags/tree/main#lighting)**
 * **[Graphical](https://github.com/theletron/bloxflags/tree/main#graphical)**
 * **[Improvements](https://github.com/theletron/bloxflags/tree/main#improvements)**
-* **[Escape Menu Version](https://github.com/theletron/bloxflags/tree/main#escape-menu-version)**
+* **[Roblox UI Version](https://github.com/theletron/bloxflags/tree/main#roblox-ui-version)***
 * **[UI](https://github.com/theletron/bloxflags/tree/main#user-interface)**
 * **[Audio](https://github.com/theletron/bloxflags/tree/main#audio)**
 * **[Debugging](https://github.com/theletron/bloxflags/tree/main#debugging)**
 * **[Experimental](https://github.com/theletron/bloxflags/tree/main#experimental)**
 
-<h1 align="center">Lighting</h1>
+<h1 style="text-align: center;">Lighting</h1>
 
 ### Enable GPU Light Culling
 > [!NOTE]
-> Light culling is a technique in computer graphics used to optimize rendering by determining which lights affect which objects in a scene, reducing unnecessary lighting calculations and improving performance.
+> Light culling is a technique used in computer graphics to improve rendering by determining which lights affect which objects in a scene.
 ```json
 {
     "FFlagFastGPULightCulling3": true
@@ -58,11 +63,9 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 }
 ```
 
-<h1 align="center">Graphical</h1>
+<h1 style="text-align: center;">Graphical</h1>
 
 ### No Textures
-###### [@.s_y_](https://discord.com/channels/1099468797410283540/1247944649822441634)
-###### Updated from [@skylan031](https://discord.com/channels/1099468797410283540/1247944649822441634/1280952560596811796)
 ```json
 {
     "FIntDebugTextureManagerSkipMips": 8
@@ -71,16 +74,32 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 
 ### Low Render Distance
 > [!IMPORTANT]
-> Only works with games that have StreamingEnabled enabled.
-###### [@cam1494](https://discord.com/channels/1099468797410283540/1189687881170690128)
+> Only works with experiences that have [streaming](https://create.roblox.com/docs/workspace/streaming) enabled.
 ```json
 {
     "DFIntDebugRestrictGCDistance": 1
 }
 ```
 
+### Override Graphics Quality Level on Startup
+```json
+{
+    "FIntRomarkStartWithGraphicQualityLevel": 1
+}
+```
+
+### Override Render Distance
+> [!WARNING]
+> This doesn't work on all experiences. If you set it to 1 and it doesn't change when you increase it, it's probably capped by the game. Remove the flag or increase the value to 6 or above. This probably won't affect you. It only applies to games with a custom render distance engine.
+> [!TIP]
+> The render distance increases with the value. Here are the values you can use: **<br> 1 = 1 bar of graphics quality (Recommended) <br> 6 = 3 bars of graphics quality  <br> 21 = 10 bars of graphics quality**
+```json
+{
+    "DFIntDebugFRMQualityLevelOverride": 1
+}
+```
+
 ### Disable LOD based on distance
-###### [@beanacceleration](https://discord.com/channels/1099468797410283540/1146963091775553536/1146963091775553536)
 ```json
 {
     "DFIntCSGLevelOfDetailSwitchingDistance": 0,
@@ -91,20 +110,17 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Grass
-###### [Origin](https://discord.com/channels/1099468797410283540/1160254260915744809/1160257120395071579)
 ```json
 {
     "FIntFRMMinGrassDistance": 0,
     "FIntFRMMaxGrassDistance": 0,
-    "FIntRenderGrassDetailStrands": 0,
-    "FIntRenderGrassHeightScaler": 0
+    "FIntRenderGrassDetailStrands": 0
 }
 ```
 
 ### Grass Motion Speed
 > [!TIP]
 > The speed of the grass increases with the value.
-###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1292228979008339999)
 ```json
 {
     "FIntGrassMovementReducedMotionFactor": 0
@@ -112,7 +128,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Disable Dynamic Head Animations
-###### [@atweak](https://discord.com/channels/1099468797410283540/1211694825628241980)
 ```json
 {
     "DFIntAnimationLodFacsDistanceMin": 0,
@@ -121,7 +136,7 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 }
 ```
 
-<h1 align="center">Improvements</h1>
+<h1 style="text-align: center;">Improvements</h1>
 
 ### Disable 240 FPS cap
 ```json
@@ -130,20 +145,7 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 }
 ```
 
-### Enable Captures Toggle for Chrome UI
-> [!IMPORTANT]
-> This will **not** remove Captures and return the Record tab.
-> It will add a toggle to turn on and off the Capture button.
-> Only V4 + New UI doesn't have this toggle (V2 doesn't have the Captures tab)
-###### [@theletron](https://github.com/theletron)
-```json
-{
-    "FFlagEnableCapturesInChrome": false
-}
-```
-
 ### Text Size Options in Settings
-###### [@0100152000022000 (Sky)](https://discord.com/channels/1099468797410283540/1278473853319774228)
 ```json
 {
     "FFlagEnablePreferredTextSizeScale": true,
@@ -152,7 +154,8 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### GUI Hiding Options in Settings
-###### [@atweak](https://discord.com/channels/1099468797410283540/1219706245858984026)
+> [!IMPORTANT]
+> Only works if you have [gui hiding options](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags#gui-hiding) enabled.
 ```json
 {
     "FFlagUserShowGuiHideToggles": true,
@@ -164,7 +167,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ### Increased Camera Sensitivity Decimal Limit
 > [!NOTE]
 > Roblox changed the limit to 3, it used to be 5.
-###### [@.s_y_](https://discord.com/channels/1099468797410283540/1278533638702628995)
 ```json
 {
     "FFlagFixSensitivityTextPrecision": false,
@@ -172,52 +174,50 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Smooth Trackpad Scrolling in Client Home
+> [!IMPORTANT]
+> Doesn't work as well with normal external mice.
 > [!NOTE]
 > Instead of scrolling in large and equal chunks every time you scroll with a trackpad, it scrolls smoothly without skipping the small parts it would normally skip.
-> Doesn't work as well with normal external mice.
-###### [@satlybpro](https://discord.com/channels/1099468797410283540/1278525530559352914https://discord.com/channels/1099468797410283540/1300384121637441536)
 ```json
 {
-  "FFlagBetterTrackpadScrolling": true
+    "FFlagBetterTrackpadScrolling": true
 }
 ```
 
 ### Blue Theme
-###### [@.s_y_](https://discord.com/channels/1099468797410283540/1278525530559352914)
 ```json
 {
-    "FFlagLuaAppEnableFoundationColors5": true
+    "FFlagLuaAppEnableFoundationColors7": true,
+    "FFlagLuaAppFoundationColorsABTest7": true,
+    "FFlagLuaAppUseUIBloxColorPalettes1": false,
+    "FFlagUIBloxUseNewThemeColorPalettes": false
 }
 ```
 
-### Darker Theme
-###### [@cam1419](https://discord.com/channels/1099468797410283540/1211370693514625067)
+### Original Theme
+> [!NOTE]
+> Roblox is now slowly rolling out the new blue theme with AB tests. The ability to turn off the blue theme is not certain in the future.
 ```json
 {
+    "FFlagLuaAppEnableFoundationColors7": false,
+    "FFlagLuaAppFoundationColorsABTest7": false,
     "FFlagLuaAppUseUIBloxColorPalettes1": true,
     "FFlagUIBloxUseNewThemeColorPalettes": true
 }
 ```
 
-### Stuttery Animation Fix
-###### [@0100152000022000 (Sky)](https://discord.com/channels/1099468797410283540/1228713913235935242)
-```json
-{
-    "DFIntTimestepArbiterThresholdCFLThou": 300
-}
-```
-
 ### Disable Ad Portals
 > [!NOTE]
-> If you accidentally touch ad portals, this is for you.
-###### [@atweak](https://discord.com/channels/1099468797410283540/1179502701118230529)
+> If you don't want to accidentally touch ad portals, this is for you.
 ```json
 {
     "FFlagAdServiceEnabled": false
 }
 ```
 
-### Disable Telemetry 
+### Disable Telemetry
+> [!NOTE]
+> Does not completely disable all telemetry, but it does disable a lot of it.
 ###### [@bluepilledgreat](https://gist.github.com/bluepilledgreat/c4307f927fef66628c423b9e208fa9cd)
 ```json
 {
@@ -231,18 +231,18 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 }
 ```
 
-### Time Until Timeout
+### Time until Timeout
 > [!TIP]
-> Increasing this option will give you more time to reconnect in case of network loss.
-> This flag has the default value.
+> Increasing this value will give you more time to reconnect in case of network loss. **This value is in miliseconds.** <br> **Default: 10000**
 ```json
 {
-    "DFIntDefaultTimeoutTimeMs": 10000
+    "DFIntDefaultTimeoutTimeMs": 60000
 }
 ```
 
 ### Subscriptions Page
-###### [@cam1494](https://discord.com/channels/1099468797410283540/1211415227644645527)
+> [!NOTE]
+> Located in client settings.
 ```json
 {
     "FFlagLuaAppDevSubsEnabled": true
@@ -258,27 +258,16 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 
 ### Dev Console Log Limit
 > [!TIP]
-> Increasing this option will make your life better, if you are a developer.
-> This flag has the default value.
-###### [@satlybpro](https://discord.com/channels/1099468797410283540/1300747833086971904)
+> Increasing this option will make your life easier if you are a developer. <br> **This flag has the default value.**
 ```json
 {
     "FIntNewDevConsoleMaxLogCount": 500
 }
 ```
 
-<h1 align="center">User Interface</h1>
+<h1 style="text-align: center;">User Interface</h1>
 
-### Remove Platform Chat
-###### [@]()
-```json
-{
-    "FFlagAppChatInExperienceEnabledV647new": false
-}
-```
-
-### Rename "Charts" back to "Discovery"
-###### [@cam1494](https://discord.com/channels/1099468797410283540/1254997424116863048)
+### Rename Charts back to Discovery
 ```json
 {
     "FFlagLuaAppChartsPageRenameIXP": false
@@ -286,7 +275,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Old Marketplace Search Bar
-###### [@thefrenchguy4](https://discord.com/channels/1099468797410283540/1281731256178180118)
 ```json
 {
     "FFlagAXSearchLandingPageIXPEnabled4": false
@@ -294,7 +282,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Old Chat Tab
-###### [@thefrenchguy4](https://discord.com/channels/1099468797410283540/1280936777946890274)
 ```json
 {
     "FStringNewChatTabExperimentLayerValue": "",
@@ -303,34 +290,23 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Parental Controls Tab in Client Settings
-###### [@thefrenchguy4](https://discord.com/channels/1099468797410283540/1280626112740982876)
 ```json
 {
     "FFlagLuaAppsEnableParentalControlsTab": false
 }
 ```
 
-### Revert Unibar Icon Change
+### Rename "Reset Character" to "Respawn" in Escape Menu
 ###### [@theletron](https://github.com/theletron)
 ```json
 {
-    "FFlagUseNewUnibarIcon": false
-}
-```
-
-### Remove Unibar Respawn Button
-###### [@theletron](https://github.com/theletron)
-```json
-{
-    "FFlagUnibarRespawn": false
+    "FFlagInExperienceMenuResetButtonTextToRespawn": true
 }
 ```
 
 ### Verified Badge
 > [!IMPORTANT]
-> Clientsided.
-> Replace "userId" with your user id.
-###### [@atweak](https://discord.com/channels/1099468797410283540/1160200870517030963)
+> Clientsided. <br> Replace "userId" with your user id.
 ```json
 {
     "FStringWhitelistVerifiedUserId": "userId"
@@ -338,7 +314,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Return New Invite Menu
-###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1191455320275431444)
 ```json
 {
     "FFlagEnableNewInviteMenuIXP2": false
@@ -346,7 +321,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Haptics Option
-###### [@thefrenchguy4](https://discord.com/channels/1099468797410283540/1268891182302494772)
 ```json
 {
     "FFlagAddHapticsToggle": false
@@ -354,7 +328,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove VR Option
-###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1238434506818588682)
 ```json
 {
     "FFlagAlwaysShowVRToggleV3": false
@@ -362,7 +335,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Chat Translation Message
-###### [@toofastforboo](https://discord.com/channels/1099468797410283540/1277315962269339698)
 ```json
 {
     "FFlagChatTranslationEnableSystemMessage": false
@@ -370,7 +342,6 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Chat Translation Options
-###### [@spectroscopic](https://discord.com/channels/1099468797410283540/1204335548160938025)
 ```json
 {
     "FFlagChatTranslationSettingEnabled3": false
@@ -386,7 +357,7 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Language Feedback Button in Settings
-###### [@atweak](https://discord.com/channels/1099468797410283540/1231746431539351612)
+###### @atweak
 ```json
 {
     "FFlagDisableFeedbackSoothsayerCheck": false
@@ -394,19 +365,50 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Remove Player List Close Button
-###### [@easternbloxxer](https://discord.com/channels/1099468797410283540/1211306325334822982)
+###### @easternbloxxer
 ```json
 {
     "FFlagDisablePlayerListDisplayCloseBtn": true
 }
 ```
 
-<h1 align="center">Audio</h1>
+<h2 style="text-align: center;">UI Versions</h2>
+
+> [!IMPORTANT]
+> V1 and V3 Menu has been completely removed from Roblox. It is not possible to use it.
+
+> [!CAUTION]
+> Currently, only V4 is supported. V2 Menu and V2 UI does not have the latest and may cause instability issues.
+
+### V2 Menu + UI
+```json
+{
+    "FIntNewInGameMenuPercentRollout3": 100,
+    "FFlagEnableInGameMenuChromeABTest4": false
+}
+```
+
+### V3 Menu + UI
+```json
+{
+    "FIntNewInGameMenuPercentRollout3": 0,
+    "FFlagEnableInGameMenuChromeABTest4": true
+}
+```
+
+### V2 UI
+```json
+{
+    "FIntNewInGameMenuPercentRollout3": 0,
+    "FFlagEnableInGameMenuChromeABTest4": false
+}
+```
+
+<h1 style="text-align: center;">Audio</h1>
 
 ### Voice Chat Hear Distance
-###### Default: Min 7, Max 80
 > [!TIP]
-> These flags have default values.
+> **Default: <br> Minimum Distance: 7 <br> Maximum Distance: 80**
 ```json
 {
     "DFIntVoiceChatRollOffMinDistance": 7,
@@ -415,7 +417,7 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### Audio Physical Velocity
-###### [@0100152000022000 (Sky)](https://discord.com/channels/1099468797410283540/1211417705572466698)
+###### @0100152000022000 (Sky)
 ```json
 {
     "FFlagSoundsUsePhysicalVelocity": true
@@ -425,7 +427,7 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ### Voice Chat Volume
 > [!TIP]
 > Default: 1000
-###### [@0100152000022000 (Sky)](https://discord.com/channels/1099468797410283540/1208100665138745424)
+###### @0100152000022000 (Sky)
 ```json
 {
     "DFIntVoiceChatVolumeThousandths": 100000
@@ -433,14 +435,14 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ```
 
 ### No Sounds
-###### [@cam1494](https://discord.com/channels/1099468797410283540/1211420049101815818)
+###### @cam1494
 ```json
 {
     "FFlagDebugRomarkMockingAudioDevices": true
 }
 ```
 
-<h1 align="center">Debugging</h1>
+<h1 style="text-align: center;">Debugging</h1>
 
 ### Display FPS
 > [!TIP]
@@ -451,31 +453,28 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 }
 ```
 
-### Don't Render ScreenGuis
-> [!IMPORTANT]
-> Causes Client Home not to be displayed.
-###### [@atweak](https://discord.com/channels/1099468797410283540/1231750903078322256)
+### Always Display Stats
 ```json
 {
-    "FFlagDebugDontRenderScreenGui": true
+    "FFlagDebugAlwaysDisplayRenderStats": true
 }
 ```
 
 ### Disabe Click to Move Climbing
-###### [@atweak](https://discord.com/channels/1099468797410283540/1231749733941510195)
+###### @atweak
 ```json
 {
     "FFlagUserClickToMoveSupportAgentCanClimb2": false
 }
 ```
 
-<h1 align="center">Experimental</h1>
+<h1 style="text-align: center;">Experimental</h1>
 
 > [!CAUTION]
-> These presets are for fun and testing. They may not work, may cause instability and unexpected results, or simply **not useful at all**.
+> These presets are for fun and testing. They may **not work**, may cause **instability** and **unexpected results**, or simply **not useful at all**.
 
 ### Disable Purchases
-###### [@hazey_hazel](https://discord.com/channels/1099468797410283540/1153898300714532994)
+###### @hazey_hazel
 ```json
 {
     "DFFlagOrder66": true
@@ -485,19 +484,17 @@ Source is [Bloxstrap discord server](https://discord.gg/nKjV3mGq6R) and me.
 ### Verified Badge on Everyone
 > [!IMPORTANT]
 > Clientsided.
-###### [@bloodrvn](https://discord.com/channels/1099468797410283540/1167534034591694849)
+###### @bloodrvn
 ```json
 {
     "FFlagOverridePlayerVerifiedBadge": true
 }
 ```
 
-<h2 align="center">Rendering</h1>
+<h2 style="text-align: center;">Rendering</h1>
 
 > [!WARNING]
-> You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap.
-> These renderers are unstable and can cause bugs, crashes and instability.
-> Only change your renderer if you know what you are doing.
+> You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap. <br> These renderers are unstable and can cause bugs, crashes and instability. <br> **Only change your renderer if you know what you are doing.**
 
 ### OpenGL
 ```json
