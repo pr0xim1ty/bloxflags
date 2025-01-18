@@ -32,7 +32,7 @@
 
 </div>
 
-----
+---
 
 Bloxflags is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki/What-are-fast-flags%3F) grouped as presets for use with the Roblox engine.
 
@@ -45,16 +45,61 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 
 ## Preset Type Navigation
 
-* **[Lighting](https://github.com/theletron/bloxflags/tree/main#lighting)**
 * **[Graphical](https://github.com/theletron/bloxflags/tree/main#graphical)**
 * **[Improvements](https://github.com/theletron/bloxflags/tree/main#improvements)**
+* **[UI](https://github.com/theletron/bloxflags/tree/main#user-interface-ui)**
+* **[UX](https://github.com/theletron/bloxflags/tree/main#user-experience-ux)**
 * **[Roblox UI Version](https://github.com/theletron/bloxflags/tree/main#roblox-ui-version)**
-* **[UI](https://github.com/theletron/bloxflags/tree/main#user-interface)**
 * **[Audio](https://github.com/theletron/bloxflags/tree/main#audio)**
 * **[Debugging](https://github.com/theletron/bloxflags/tree/main#debugging)**
 * **[Experimental](https://github.com/theletron/bloxflags/tree/main#experimental)**
 
-<h1 style="text-align: center;">Lighting</h1>
+<h1 align=center>Graphical</h1>
+
+### Disable 240 FPS Limit
+> [!WARNING]
+> Increasing your FPS limit beyond 240 FPS **actually does more than you expect**. So there's a very small chance that increasing it beyond this limit could have unintended side effects, including but not limited to:
+> * increased ping
+> * crashes when teleporting/joining games
+>
+> It doesn't happen for everyone, but at least check if it happens for you.
+>
+> **For more information, see [this](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags/#framerate-limit).**
+```json
+{
+    "FFlagTaskSchedulerLimitTargetFpsTo2402": false,
+}
+```
+
+### Override Graphics Quality Level + Max Render Distance
+> [!WARNING]
+> This preset won't work on games with custom render distance systems.
+
+> [!TIP]
+> You can increase the graphics quality with the value, just like the graphics slider.
+>
+> **Minimum: 1 (lowest quality)** <br>
+> **Recommended: 6 (sweet spot for low-end users)** <br>
+> **Maximum: 21 (highest quality)**
+```json
+{
+    "DFIntDebugFRMQualityLevelOverride": 1
+}
+```
+
+### Override Graphics Quality Level on Startup
+```json
+{
+    "FIntRomarkStartWithGraphicQualityLevel": 1
+}
+```
+
+### No Textures
+```json
+{
+    "FIntDebugTextureManagerSkipMips": 8
+}
+```
 
 ### Enable GPU Light Culling
 > [!NOTE]
@@ -72,59 +117,12 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Graphical</h1>
-
-### Disable 240 FPS Limit
-> [!WARNING]
-> Increasing your FPS limit beyond 240 FPS actually does more than you expect. So there's a very small chance that increasing it beyond this limit could have unintended side effects, including but not limited to:
-> * increased ping
-> * crashes when teleporting/joining games
->
-> It doesn't happen for everyone, but at least check if it happens for you.
->
-> For more information, see [this](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags/#framerate-limit).
-```json
-{
-    "FFlagTaskSchedulerLimitTargetFpsTo2402": false,
-}
-```
-
-### No Textures
-```json
-{
-    "FIntDebugTextureManagerSkipMips": 8
-}
-```
-
 ### Low Render Distance
 > [!IMPORTANT]
 > Only works with experiences that have [streaming](https://create.roblox.com/docs/workspace/streaming) enabled.
 ```json
 {
     "DFIntDebugRestrictGCDistance": 1
-}
-```
-
-### Override Quality Distance + Max Render Distance
-> [!WARNING]
-> This preset won't work on games with custom render distance.
-
-> [!TIP]
-> You can increase the graphics quality with the value, just like the graphics slider.
->
-> **Minimum: 1 (lowest quality)**
-> **Recommended: 6 (sweet spot)**
-> **Maximum: 21 (highest quality)**
-```json
-{
-    "DFIntDebugFRMQualityLevelOverride": 1
-}
-```
-
-### Override Graphics Quality Level on Startup
-```json
-{
-    "FIntRomarkStartWithGraphicQualityLevel": 1
 }
 ```
 
@@ -165,7 +163,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Improvements</h1>
+<h1 align=center>Improvements</h1>
 
 ### Remove VC Beta Badge
 ```json
@@ -255,14 +253,14 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 
 ### Time until Timeout
 > [!TIP]
-> Increasing this value will give you more time to reconnect in case of network loss.
->
+> Increasing this value will give you more time to reconnect in case of network loss. <br>
 > **This value is in miliseconds.**
 >
-> **Default: 10000**
+> **Default: 10000** <br>
+> **Recommended: 60000**
 ```json
 {
-    "DFIntDefaultTimeoutTimeMs": 60000
+    "DFIntDefaultTimeoutTimeMs": 10000
 }
 ```
 
@@ -279,14 +277,15 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 > [!TIP]
 > Increasing this option will make your life easier if you are a developer.
 >
-> **This flag has the default value.**
+> **Default: 500** <br>
+> **Recommended: 5000**
 ```json
 {
     "FIntNewDevConsoleMaxLogCount": 500
 }
 ```
 
-<h1 style="text-align: center;">User Interface (UI)</h1>
+<h1 align=center>User Interface (UI)</h1>
 
 ### Rename 'Charts' tab back to 'Discovery'
 ```json
@@ -368,7 +367,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-### Return New Invite Menu
+### Old Invite Menu
 ```json
 {
     "FFlagEnableNewInviteMenuIXP2": false
@@ -386,7 +385,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 > [!IMPORTANT]
 > Clientsided.
 >
-> Replace "userId" with your user id.
+> **Replace "userId" with your user id.**
 ```json
 {
     "FStringWhitelistVerifiedUserId": "userId"
@@ -402,7 +401,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">User Experience (UX)</h2>
+<h1 align=center>User Experience (UX)</h2>
 
 ### Disable Purchases
 ```json
@@ -411,7 +410,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Roblox UI Versions</h2>
+<h1 align=center>Roblox UI Version</h2>
 
 > [!IMPORTANT]
 > V1 and V3 Menu has been completely removed from Roblox. It is not possible to use it.
@@ -443,15 +442,18 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Audio</h1>
+<h1 align=center>Audio</h1>
 
 ### Voice Chat Hear Distance
 > [!TIP]
 > **Default:**
 >
-> **Minimum Distance: 7**
->
+> **Minimum Distance: 7** <br>
 > **Maximum Distance: 80**
+>
+> **Recommended:**
+>
+> **Maximum Distance: 120**
 ```json
 {
     "DFIntVoiceChatRollOffMinDistance": 7,
@@ -460,11 +462,9 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 ```
 
 ### Voice Chat Volume
-> [!TIP]
-> Default: 1000
 ```json
 {
-    "DFIntVoiceChatVolumeThousandths": 100000
+    "DFIntVoiceChatVolumeThousandths": 1000
 }
 ```
 
@@ -475,7 +475,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Debugging</h1>
+<h1 align=center>Debugging</h1>
 
 ### Display FPS
 > [!TIP]
@@ -500,10 +500,10 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h1 style="text-align: center;">Experimental</h1>
+<h1 align=center>Experimental</h1>
 
 > [!CAUTION]
-> These presets may **not work**, may cause **instability** and **unexpected results**, or simply **not useful at all**.
+> It is not recommended to use these presets.
 
 ### Text Size Options in Settings
 > [!CAUTION]
@@ -515,9 +515,9 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 }
 ```
 
-<h2 style="text-align: center;">Rendering</h1>
+<h2 align=center>Rendering</h1>
 
-> [!WARNING]
+> [!CAUTION]
 > You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap.
 >
 > These renderers are not supported. Here are the side effects:
