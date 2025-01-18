@@ -1,23 +1,30 @@
-[shield-repository-license]:  https://img.shields.io/github/license/theletron/bloxflags
-[shield-repository-latest]:   https://img.shields.io/github/v/release/theletron/bloxflags?color=7439DB
-[shield-preset-count]:        https://img.shields.io/badge/currently_listed_presets-51-yellow
+[shield-repository-license]:      https://img.shields.io/github/license/theletron/bloxflags
+[shield-repository-latest]:       https://img.shields.io/github/v/release/theletron/bloxflags?color=7439DB
+[shield-preset-count]:            https://img.shields.io/badge/currently_listed_presets-51-yellow
 
-[repository-license]:         https://github.com/theletron/bloxflags/blob/main/LICENSE
-[repository-latest]:          https://github.com/theletron/bloxflags/releases/latest
+[repository-license]:             https://github.com/theletron/bloxflags/blob/main/LICENSE
+[repository-latest]:              https://github.com/theletron/bloxflags/releases/latest
 
 > [!CAUTION]
-> FastFlags are extremely powerful, being that they are intended to only be used by Roblox engineers. While they can be very useful, they can cause issues with stability and functionality if you don't know what you're doing. <br> <br> You should only use the flag list editor if you know what you're doing. You should only configure flags that you know exactly what they do. <br> <br> We especially do not recommend importing any flags that claim to "optimise ping", "+250 fps boost" and more. These are clickbait and don't work.
+> Fast flags are extremely powerful, being that they are intended to only be used by Roblox engineers. While they can be very useful, they can cause issues with stability and functionality if you don't know what you're doing.
+>
+> You should only use the flag list editor if you know what you're doing. You should only configure flags that you know exactly what they do.
+>
+> We especially do not recommend using any flags that claim to "optimise ping", "+250 fps boost" and more. These are clickbait and don't work.
 
+<!--
 > [!IMPORTANT]
-> In the near future, Roblox plans to restrict local flag configurations. This was supposed to have already been implemented, but it hasn't been.
-> **This doesn't mean you shouldn't use this flag list at this time.**
+> In the near future, Roblox plans to restrict local flag configurations. This was supposed to have [already been implemented](https://i.redd.it/4c5u68gczbkc1.jpeg), **but it hasn't been.**
+>
+> **This doesn't mean you shouldn't use this list at this time.**
+!-->
 
-<div style="text-align: center;">
+<div align=center>
     <img alt="Bloxflags logo" src="Images/Branding/Bloxflags-full-dark.png#gh-dark-mode-only" width="420">
     <img alt="Bloxflags logo" src="Images/Branding/Bloxflags-full-light.png#gh-light-mode-only" width="420">
 </div>
 
-<div style="text-align: center;">
+<div align=center>
 
 [![License][shield-repository-license]][repository-license]
 ![Currently Listed Presets][shield-preset-count]
@@ -27,19 +34,21 @@
 
 ----
 
-This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki/What-are-fast-flags%3F) grouped as presets for use with the Roblox engine.
+Bloxflags is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki/What-are-fast-flags%3F) grouped as presets for use with the Roblox engine.
+
+Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](https://github.com/theletron/bloxflags/issues) If you can't find an issue relevant to your context, [submit an issue here!](https://github.com/theletron/bloxflags/issues/new/choose)
 
 ## Requirements
 
-* <img alt="Bloxstrap" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24" style="vertical-align: middle;"/> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
-* <img alt="AppleBlox" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24" style="vertical-align: middle;"/> **[AppleBlox (for Mac)](https://appleblox.com/)**
+* <img alt="Bloxstrap" src="https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Images/Bloxstrap.png" width="24" style="vertical-align:middle"> **[Bloxstrap (for Windows)](https://bloxstraplabs.com/)**
+* <img alt="AppleBlox" src="https://raw.githubusercontent.com/AppleBlox/appleblox/main/.github/assets/logo.png" width="24" style="vertical-align:middle"> **[AppleBlox (for Mac)](https://appleblox.com/)**
 
 ## Preset Type Navigation
 
 * **[Lighting](https://github.com/theletron/bloxflags/tree/main#lighting)**
 * **[Graphical](https://github.com/theletron/bloxflags/tree/main#graphical)**
 * **[Improvements](https://github.com/theletron/bloxflags/tree/main#improvements)**
-* **[Roblox UI Version](https://github.com/theletron/bloxflags/tree/main#roblox-ui-version)***
+* **[Roblox UI Version](https://github.com/theletron/bloxflags/tree/main#roblox-ui-version)**
 * **[UI](https://github.com/theletron/bloxflags/tree/main#user-interface)**
 * **[Audio](https://github.com/theletron/bloxflags/tree/main#audio)**
 * **[Debugging](https://github.com/theletron/bloxflags/tree/main#debugging)**
@@ -65,6 +74,21 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 
 <h1 style="text-align: center;">Graphical</h1>
 
+### Disable 240 FPS Limit
+> [!WARNING]
+> Increasing your FPS limit beyond 240 FPS actually does more than you expect. So there's a very small chance that increasing it beyond this limit could have unintended side effects, including but not limited to:
+> * increased ping
+> * crashes when teleporting/joining games
+>
+> It doesn't happen for everyone, but at least check if it happens for you.
+>
+> For more information, see [this](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags/#framerate-limit).
+```json
+{
+    "FFlagTaskSchedulerLimitTargetFpsTo2402": false,
+}
+```
+
 ### No Textures
 ```json
 {
@@ -81,6 +105,22 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
+### Override Quality Distance + Max Render Distance
+> [!WARNING]
+> This preset won't work on games with custom render distance.
+
+> [!TIP]
+> You can increase the graphics quality with the value, just like the graphics slider.
+>
+> **Minimum: 1 (lowest quality)**
+> **Recommended: 6 (sweet spot)**
+> **Maximum: 21 (highest quality)**
+```json
+{
+    "DFIntDebugFRMQualityLevelOverride": 1
+}
+```
+
 ### Override Graphics Quality Level on Startup
 ```json
 {
@@ -88,18 +128,7 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
-### Override Render Distance
-> [!WARNING]
-> This doesn't work on all experiences. If you set it to 1 and it doesn't change when you increase it, it's probably capped by the game. Remove the flag or increase the value to 6 or above. This probably won't affect you. It only applies to games with a custom render distance engine.
-> [!TIP]
-> The render distance increases with the value. Here are the values you can use: **<br> 1 = 1 bar of graphics quality (Recommended) <br> 6 = 3 bars of graphics quality  <br> 21 = 10 bars of graphics quality**
-```json
-{
-    "DFIntDebugFRMQualityLevelOverride": 1
-}
-```
-
-### Disable LOD based on distance
+### Disable LOD Based on Distance
 ```json
 {
     "DFIntCSGLevelOfDetailSwitchingDistance": 0,
@@ -138,24 +167,16 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 
 <h1 style="text-align: center;">Improvements</h1>
 
-### Disable 240 FPS cap
+### Remove VC Beta Badge
 ```json
 {
-    "FFlagTaskSchedulerLimitTargetFpsTo2402": false,
-}
-```
-
-### Text Size Options in Settings
-```json
-{
-    "FFlagEnablePreferredTextSizeScale": true,
-    "FFlagEnablePreferredTextSizeSettingInMenus2": true
+    "FFlagControlBetaBadgeWithGuac": false
 }
 ```
 
 ### GUI Hiding Options in Settings
 > [!IMPORTANT]
-> Only works if you have [gui hiding options](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags#gui-hiding) enabled.
+> Only appears if you have [gui hiding options](https://github.com/bloxstraplabs/bloxstrap/wiki/A-guide-to-FastFlags#gui-hiding) enabled.
 ```json
 {
     "FFlagUserShowGuiHideToggles": true,
@@ -166,7 +187,7 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 
 ### Increased Camera Sensitivity Decimal Limit
 > [!NOTE]
-> Roblox changed the limit to 3, it used to be 5.
+> Roblox changed the limit for the camera sensitivity to 3. Before, it used to be 5. **This preset reverts this change.**
 ```json
 {
     "FFlagFixSensitivityTextPrecision": false,
@@ -176,6 +197,7 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 ### Smooth Trackpad Scrolling in Client Home
 > [!IMPORTANT]
 > Doesn't work as well with normal external mice.
+
 > [!NOTE]
 > Instead of scrolling in large and equal chunks every time you scroll with a trackpad, it scrolls smoothly without skipping the small parts it would normally skip.
 ```json
@@ -233,7 +255,11 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 
 ### Time until Timeout
 > [!TIP]
-> Increasing this value will give you more time to reconnect in case of network loss. **This value is in miliseconds.** <br> **Default: 10000**
+> Increasing this value will give you more time to reconnect in case of network loss.
+>
+> **This value is in miliseconds.**
+>
+> **Default: 10000**
 ```json
 {
     "DFIntDefaultTimeoutTimeMs": 60000
@@ -249,74 +275,23 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
-### Remove VC Beta Badge
-```json
-{
-    "FFlagControlBetaBadgeWithGuac": false
-}
-```
-
 ### Dev Console Log Limit
 > [!TIP]
-> Increasing this option will make your life easier if you are a developer. <br> **This flag has the default value.**
+> Increasing this option will make your life easier if you are a developer.
+>
+> **This flag has the default value.**
 ```json
 {
     "FIntNewDevConsoleMaxLogCount": 500
 }
 ```
 
-<h1 style="text-align: center;">User Interface</h1>
+<h1 style="text-align: center;">User Interface (UI)</h1>
 
-### Rename Charts back to Discovery
+### Rename 'Charts' tab back to 'Discovery'
 ```json
 {
     "FFlagLuaAppChartsPageRenameIXP": false
-}
-```
-
-### Old Marketplace Search Bar
-```json
-{
-    "FFlagAXSearchLandingPageIXPEnabled4": false
-}
-```
-
-### Old Chat Tab
-```json
-{
-    "FStringNewChatTabExperimentLayerValue": "",
-    "FFlagEnableNewChatTabExperiment5": false
-}
-```
-
-### Remove Parental Controls Tab in Client Settings
-```json
-{
-    "FFlagLuaAppsEnableParentalControlsTab": false
-}
-```
-
-### Rename "Reset Character" to "Respawn" in Escape Menu
-###### [@theletron](https://github.com/theletron)
-```json
-{
-    "FFlagInExperienceMenuResetButtonTextToRespawn": true
-}
-```
-
-### Verified Badge
-> [!IMPORTANT]
-> Clientsided. <br> Replace "userId" with your user id.
-```json
-{
-    "FStringWhitelistVerifiedUserId": "userId"
-}
-```
-
-### Return New Invite Menu
-```json
-{
-    "FFlagEnableNewInviteMenuIXP2": false
 }
 ```
 
@@ -356,8 +331,7 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
-### Remove Language Feedback Button in Settings
-###### @atweak
+### Remove Language Feedback Button
 ```json
 {
     "FFlagDisableFeedbackSoothsayerCheck": false
@@ -365,36 +339,85 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 ```
 
 ### Remove Player List Close Button
-###### @easternbloxxer
 ```json
 {
     "FFlagDisablePlayerListDisplayCloseBtn": true
 }
 ```
 
-<h2 style="text-align: center;">UI Versions</h2>
+### Rename "Reset Character" to "Respawn" in Escape Menu
+###### [@theletron](https://github.com/theletron)
+```json
+{
+    "FFlagInExperienceMenuResetButtonTextToRespawn": true
+}
+```
+
+### Old Marketplace Search Bar
+```json
+{
+    "FFlagAXSearchLandingPageIXPEnabled4": false
+}
+```
+
+### Old Chat Tab
+```json
+{
+    "FStringNewChatTabExperimentLayerValue": "",
+    "FFlagEnableNewChatTabExperiment5": false
+}
+```
+
+### Return New Invite Menu
+```json
+{
+    "FFlagEnableNewInviteMenuIXP2": false
+}
+```
+
+### Remove Parental Controls Tab in Client Settings
+```json
+{
+    "FFlagLuaAppsEnableParentalControlsTab": false
+}
+```
+
+### Verified Badge
+> [!IMPORTANT]
+> Clientsided.
+>
+> Replace "userId" with your user id.
+```json
+{
+    "FStringWhitelistVerifiedUserId": "userId"
+}
+```
+
+### Verified Badge on Everyone
+> [!IMPORTANT]
+> Clientsided.
+```json
+{
+    "FFlagOverridePlayerVerifiedBadge": true
+}
+```
+
+<h1 style="text-align: center;">User Experience (UX)</h2>
+
+### Disable Purchases
+```json
+{
+    "DFFlagOrder66": true
+}
+```
+
+<h1 style="text-align: center;">Roblox UI Versions</h2>
 
 > [!IMPORTANT]
 > V1 and V3 Menu has been completely removed from Roblox. It is not possible to use it.
 
 > [!CAUTION]
-> Currently, only V4 is supported. V2 Menu and V2 UI does not have the latest and may cause instability issues.
-
-### V2 Menu + UI
-```json
-{
-    "FIntNewInGameMenuPercentRollout3": 100,
-    "FFlagEnableInGameMenuChromeABTest4": false
-}
-```
-
-### V3 Menu + UI
-```json
-{
-    "FIntNewInGameMenuPercentRollout3": 0,
-    "FFlagEnableInGameMenuChromeABTest4": true
-}
-```
+> Currently, only V4 is supported. V2 Menu and V2 UI does not have the latest updates and may cause instability issues.
 
 ### V2 UI
 ```json
@@ -404,11 +427,31 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
+### V2 Menu + UI
+```json
+{
+    "FIntNewInGameMenuPercentRollout3": 100,
+    "FFlagEnableInGameMenuChromeABTest4": false
+}
+```
+
+### V4 Menu + UI
+```json
+{
+    "FIntNewInGameMenuPercentRollout3": 0,
+    "FFlagEnableInGameMenuChromeABTest4": true
+}
+```
+
 <h1 style="text-align: center;">Audio</h1>
 
 ### Voice Chat Hear Distance
 > [!TIP]
-> **Default: <br> Minimum Distance: 7 <br> Maximum Distance: 80**
+> **Default:**
+>
+> **Minimum Distance: 7**
+>
+> **Maximum Distance: 80**
 ```json
 {
     "DFIntVoiceChatRollOffMinDistance": 7,
@@ -416,18 +459,9 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 }
 ```
 
-### Audio Physical Velocity
-###### @0100152000022000 (Sky)
-```json
-{
-    "FFlagSoundsUsePhysicalVelocity": true
-}
-```
-
 ### Voice Chat Volume
 > [!TIP]
 > Default: 1000
-###### @0100152000022000 (Sky)
 ```json
 {
     "DFIntVoiceChatVolumeThousandths": 100000
@@ -435,7 +469,6 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 ```
 
 ### No Sounds
-###### @cam1494
 ```json
 {
     "FFlagDebugRomarkMockingAudioDevices": true
@@ -461,7 +494,6 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 ```
 
 ### Disabe Click to Move Climbing
-###### @atweak
 ```json
 {
     "FFlagUserClickToMoveSupportAgentCanClimb2": false
@@ -471,30 +503,28 @@ This is a collection of [fast flags](https://github.com/theletron/bloxflags/wiki
 <h1 style="text-align: center;">Experimental</h1>
 
 > [!CAUTION]
-> These presets are for fun and testing. They may **not work**, may cause **instability** and **unexpected results**, or simply **not useful at all**.
+> These presets may **not work**, may cause **instability** and **unexpected results**, or simply **not useful at all**.
 
-### Disable Purchases
-###### @hazey_hazel
+### Text Size Options in Settings
+> [!CAUTION]
+> Alpha feature. You may experience unexpected behaviour.
 ```json
 {
-    "DFFlagOrder66": true
-}
-```
-
-### Verified Badge on Everyone
-> [!IMPORTANT]
-> Clientsided.
-###### @bloodrvn
-```json
-{
-    "FFlagOverridePlayerVerifiedBadge": true
+    "FFlagEnablePreferredTextSizeScale": true,
+    "FFlagEnablePreferredTextSizeSettingInMenus2": true
 }
 ```
 
 <h2 style="text-align: center;">Rendering</h1>
 
 > [!WARNING]
-> You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap. <br> These renderers are unstable and can cause bugs, crashes and instability. <br> **Only change your renderer if you know what you are doing.**
+> You can change your renderer to DirectX 11 or DirectX 10 on Bloxstrap.
+>
+> These renderers are not supported. Here are the side effects:
+> * OpenGL: low performance
+> * Vulkan: crashes frequently
+>
+> **Only change your renderer if you know what you are doing.**
 
 ### OpenGL
 ```json
