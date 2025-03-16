@@ -1,0 +1,44 @@
+name: Bug Report
+title: "[BUG] "
+description: Report a bug with the issue you are experiencing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### **Preliminary Instructions**
+        - Please check to see if your issue has already been submitted. You can check by [looking through all previous issues](https://github.com/theletron/bloxflags/issues?q=is%3Aissue).
+        - If the preset you are using is causing problems for **Roblox** (e.g. crashes, failure to start, performance issues):
+          - Please check the preset list for the preset you are using. If the preset is not listed, it has either been removed because the fast flags no longer exist, or the preset is no longer supported.
+        - Only submit an issue if it is directly related to Bloxflags. Issues related to Bloxstrap should not be reported here.
+        - If further clarification is needed and there is no response within 2 weeks, the issue will be closed.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I have read and understood the information above, and I confirm that my issue has not already been addressed.
+          required: true
+        - label: I did not answer truthfully to the checkbox above.
+  - type: dropdown
+    id: bootstrapper
+    attributes:
+      label: Which bootstrapper are you using?
+      multiple: false
+      options:
+        - Bloxstrap
+        - Appleblox
+  - type: textarea
+    id: issue
+    attributes:
+      label: What issue are you experiencing?
+      description: Please describe the issue you encountered. Include steps to reproduce the problem and provide any relevant screenshots, videos, or resources that can help us understand the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: "[Upload your Bloxstrap configuration](https://github.com/bloxstraplabs/bloxstrap/wiki/Uploading-your-Bloxstrap-configuration), or your Appleblox/ClientSettings flag configuration."
+      render: text
+    validations:
+      required: true

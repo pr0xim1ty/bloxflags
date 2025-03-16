@@ -1,0 +1,25 @@
+name: Question
+title: "[QST] "
+description: Ask a question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### **Preliminary Instructions**
+        - Please check to see if your question has already been asked. You can check the list, [the wiki](https://github.com/theletron/bloxflags/wiki) or [previous issues](https://github.com/theletron/bloxflags/issues?q=is%3Aissue).
+        - Please do not ask how to add fast flags on mobile.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I have read and understood the information above, and I confirm that my feature request has not already been addressed.
+          required: true
+        - label: I did not answer truthfully to the checkbox above.
+  - type: textarea
+    id: question
+    attributes:
+      label: What is your question?
+      description: Provide a comprehensive description of your question.
+    validations:
+      required: true

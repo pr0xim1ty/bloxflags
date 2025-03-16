@@ -1,0 +1,26 @@
+name: Close stale issues only
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close stale issues
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-issue-stale: 14
+          days-before-issue-close: 0
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          stale-issue-message: ''
+          close-issue-message: 'This issue has been closed as stale due to inactivity.'
+          close-issue-reason: 'not_planned'

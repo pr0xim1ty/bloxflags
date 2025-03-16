@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/theletron/bloxflags/refs/heads/main/docs.json",
+  "theme": "maple",
+  "name": "Bloxflags",
+  "colors": {
+    "primary": "#FA9D48",
+    "light": "#FAB948",
+    "dark": "#FA7F48"
+  },
+  "favicon": "/favicon.ico",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "groups": [
+          {
+            "group": "Information",
+            "pages": [
+              "introduction",
+              "help"
+            ]
+          },
+          {
+            "group": "Presets",
+            "pages": [
+              "presets/graphical",
+              "presets/quality-of-life",
+              "presets/user-interface",
+              "presets/user-experience",
+              "presets/audio",
+              "presets/debugging",
+              "presets/experimental"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/logo/light.svg",
+    "dark": "/images/logo/light.svg"
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/theletron/bloxflags"
+    }
+  }
+}

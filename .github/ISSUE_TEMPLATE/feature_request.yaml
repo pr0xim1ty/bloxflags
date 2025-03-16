@@ -1,0 +1,27 @@
+name: Feature Request
+title: "[REQ] "
+description: Suggest a feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### **Preliminary Instructions**
+        - Please check to see if your feature request has already been suggested. You can check by [looking through all previous issues](https://github.com/theletron/bloxflags/issues?q=is%3Aissue).
+        - Do not submit feature requests for Bloxstrap. Submit feature requests for Bloxflags.
+        - Do not request for fast flags that can be used to gain an unfair advantage against other players.
+        - Do not request mobile support for flag configuration.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I have read and understood the information above, and I confirm that my feature request has not already been addressed.
+          required: true
+        - label: I did not answer truthfully to the checkbox above.
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What idea do you have?
+      description: Provide a comprehensive description of what you think can be improved.
+    validations:
+      required: true

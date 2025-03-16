@@ -1,0 +1,103 @@
+---
+title: 'Graphical'
+description: 'Settings and updates to modify the visual appearance and graphics.'
+icon: 'cubes'
+iconType: "duotone-solid"
+---
+
+## <Icon icon="eye" iconType="duotone-solid" /> Visuals
+
+### <Icon icon="frame" iconType="duotone-solid" /> No Textures
+```json
+{
+    "FIntDebugTextureManagerSkipMips": 8
+}
+```
+
+### <Icon icon="lightbulb-on" iconType="duotone-solid" /> Light Culling
+<Note>Light culling is a technique used in computer graphics to improve rendering by determining which lights affect which objects in a scene.</Note>
+
+#### GPU Light Culling
+```json
+{
+    "FFlagFastGPULightCulling3": true
+}
+```
+
+#### CPU Light Culling
+```json
+{
+    "FFlagDebugForceFSMCPULightCulling": true
+}
+```
+
+### Low Render Distance
+<Info>Only works with experiences that have [streaming](https://create.roblox.com/docs/workspace/streaming) enabled.</Info>
+```json
+{
+    "DFIntDebugRestrictGCDistance": 1
+}
+```
+
+### Disable LOD Based on Distance
+```json
+{
+    "DFIntCSGLevelOfDetailSwitchingDistance": 0,
+    "DFIntCSGLevelOfDetailSwitchingDistanceL12": 0,
+    "DFIntCSGLevelOfDetailSwitchingDistanceL23": 0,
+    "DFIntCSGLevelOfDetailSwitchingDistanceL34": 0
+}
+```
+
+### Grass
+
+### Remove Grass
+```json
+{
+    "FIntFRMMinGrassDistance": 0,
+    "FIntFRMMaxGrassDistance": 0,
+    "FIntRenderGrassDetailStrands": 0
+}
+```
+
+### Grass Motion Speed
+<Note>The speed of the grass increases with the value.</Note>
+```json
+{
+    "FIntGrassMovementReducedMotionFactor": 0
+}
+```
+
+### Disable Dynamic Head Animations
+```json
+{
+    "DFIntAnimationLodFacsDistanceMin": 0,
+    "DFIntAnimationLodFacsDistanceMax": 0,
+    "DFIntAnimationLodFacsVisibilityDenominator": 0
+}
+```
+
+## Settings
+
+#### Override Graphics Quality Level + Max Render Distance
+<Warning>This preset won't work on games that has a custom render distance system.</Warning>
+
+<Tip>
+You can increase the graphics quality with the value, just like the graphics slider.
+**Minimum: 1 (lowest quality)**
+**Recommended: 6 (sweet spot for low-end users)**
+**Maximum: 21 (highest quality)**
+</Tip>
+
+```json
+{
+    "DFIntDebugFRMQualityLevelOverride": 1
+}
+```
+
+#### Override Graphics Quality Level on Startup
+```json
+{
+    "FIntRomarkStartWithGraphicQualityLevel": 1
+}
+```
