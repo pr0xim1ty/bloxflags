@@ -443,7 +443,7 @@ Preset doesn't work? Feature suggestion? Question? [Check out existing issues.](
 ### V2 Menu + V2 UI
 ```json
 {
-    "FIntNewInGameMenuPercentRollout3": 100,
+    "FIntNewInGameMenuPercentRollout3": 0,
     "FFlagEnableInGameMenuChromeABTest4": false
 }
 ```
