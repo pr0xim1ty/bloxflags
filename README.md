@@ -1,3 +1,6 @@
+> [!WARNING]
+> **This repository is under maintenance. Information may be incorrect or out of date. Please check back at a later date.**
+
 # <img src="https://github.com/theletron/bloxflags/raw/main/Bloxflags.png" width="48"/> Bloxflags
 
 ![Currently listed presets](https://img.shields.io/badge/currently_listed_presets-50-yellow)
